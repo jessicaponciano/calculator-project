@@ -1,26 +1,11 @@
-let firstNumber = document.getElementById("fnumber");
-let secondNumber = document.getElementById("snumber");
+const numbers = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
 
-addition.addEventListener("click", () => {
-    let result = parseInt(firstNumber.value) + parseInt(secondNumber.value);
-    display(result);
-});
-
-subtraction.addEventListener("click", () => {
-    let result = parseInt(firstNumber.value) - parseInt(secondNumber.value);
-    display(result);
-});
-
-multiplication.addEventListener("click", () => {
-    let result = parseInt(firstNumber.value) * parseInt(secondNumber.value);
-    display(result);
-});
-
-division.addEventListener("click", () => {
-    let result = parseInt(firstNumber.value) / parseInt(secondNumber.value); 
-    display(result);
-});
+let add = (num1, num2) => num1 + num2;
+let subtract = (num1, num2) => num1 - num2;
+let multiply = (num1, num2) => num1 * num2;
+let divide = (num1, num2) => num1 / num2;
 
 function display(result) {
-    document.getElementById("result").innerHTML = result;
+    document.getElementById("result").textContent = result;
 }
