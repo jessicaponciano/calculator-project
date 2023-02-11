@@ -4,8 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculator</title>
         <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+        <title>Calculator</title>
     </head>
     <body>
         <header class="heading">
@@ -14,12 +15,12 @@
         <main>
             <section class="container">
                 <div class="display">
-                    <div class="perviousnumber"></div>
-                    <div class="cureentnumber"></div>
+                    <div class="previous-number"></div>
+                    <div class="current-number"></div>
                 </div>
-                <div class="btn-container">
+                <!-- <div class="btn-container"> -->
                     <button class="btn btn-all-clear span-two">AC</button>
-                    <button class="btn btn-delete">DEL</button>
+                    <button class="btn btn-delete">&larr;</button>
                     <button class="btn btn-operation">/</button>
                     <button class="btn btn-number">7</button>
                     <button class="btn btn-number">8</button>
@@ -33,12 +34,11 @@
                     <button class="btn btn-number">2</button>
                     <button class="btn btn-number">3</button>
                     <button class="btn btn-operation">+</button>
-                    <button class="btn btn-operation">0</button>
+                    <button class="btn btn-number">0</button>
                     <button class="btn btn-number">.</button>
                     <button class="btn btn-equal span-two">=</button>
-                </div>
+                <!-- </div> -->
             </section>
         </main>
-        <script src="script.js"></script>
     </body>
 </html>

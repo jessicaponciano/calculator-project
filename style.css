@@ -1,55 +1,65 @@
-*{
+* {
     box-sizing: border-box;
-}
-body{
     padding: 0;
-    margin:0;
+    margin: 0;
 }
-.heading{
+
+.heading {
     text-align: center;
+    padding-top: 40px;
 }
-.container{
-    max-width: 20rem;
-    margin: 10vh auto 0 auto;
-    box-shadow: 0  0 4rem 1rem rgba(153,153,153,1);  
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 80vh;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 70px);
+    /* max-width: 20rem;
+    margin: 10vh auto 0 auto; 
+    box-shadow: 0 0 4rem 1rem rgba(153, 153, 153, 1);*/
 }
-.display{
-    height: 5rem;
+
+.container > .display {
     grid-column: 1 / -1;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: #000000bf;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
     padding: 5px;
     word-wrap: break-word;
-    word-break: break-all;     
+    word-break: break-all;
 }
-.display .perviousnumber{
-    color: rgba(255,255, 255, 0.75);
+
+.display .previous-number {
+    color: rgba(255, 255, 255, 0.75);
     font-size: 1.5rem;
 }
-.display .cureentnumber{
+
+.display .current-number {
     color: white;
     font-size: 2.5rem;
 }
-.btn-container{
+
+/* .btn-container{
     display: grid;
     border-bottom: .1rem solid #999;
     border-left: .1rem solid #999;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-.btn-container > button{
-    border-top:.1rem solid #999;
+} */
+/* .btn-container>button {
+    border-top: .1rem solid #999;
     border-right: .1rem solid #999;
-}
-.btn{
-    border: .01rem solid #999;
-    line-height: 4rem;
-    text-align: center;
+} */
+
+.btn {
+    border: .08rem solid #999;
     font-size: 2rem;
     cursor: pointer;
 }
-.span-two{
+
+.span-two {
     grid-column: span 2;
 }
