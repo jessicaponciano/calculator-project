@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link href="calc.css" rel="stylesheet">
-    <script src="calc.js" defer></script>
-  </head>
-  <body>
-    <div class="calculator">
-    <div class="output">
-    <div data-previous-operand class="previous-operand"></div>
-    <div data-current-operand class="current-operand"></div>
-    </div>
-    
-    <button reset style="grid-column: span 2; color: red;">Clear</button>
-	<button equals style="grid-column: span 2; color: green;">=</button>
-    
-    <button numeric>7</button>
-    <button numeric>8</button>
-    <button numeric>9</button>
-    <button operator>*</button>
-    <button numeric>4</button>
-    <button numeric>5</button>
-    <button numeric>6</button>
-    <button operator>+</button>
-    <button numeric>1</button>
-    <button numeric>2</button>
-    <button numeric>3</button>
-    <button operator>-</button>
-	<button numeric>0</button>
-    <button numeric>.</button>
-	<button del style="color:red;">Del</button>
-	<button operator>/</button>
-    
-
-    </div>
-
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="heading">
+            <h1> Welcome to Calculator</h1>
+        </header>
+        <main>
+            <section class="container">
+                <div class="display">
+                    <div class="perviousnumber"></div>
+                    <div class="cureentnumber"></div>
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-all-clear span-two">AC</button>
+                    <button class="btn btn-delete">DEL</button>
+                    <button class="btn btn-operation">/</button>
+                    <button class="btn btn-number">7</button>
+                    <button class="btn btn-number">8</button>
+                    <button class="btn btn-number">9</button>
+                    <button class="btn btn-operation">*</button>
+                    <button class="btn btn-number">4</button>
+                    <button class="btn btn-number">5</button>
+                    <button class="btn btn-number">6</button>
+                    <button class="btn btn-operation">-</button>
+                    <button class="btn btn-number">1</button>
+                    <button class="btn btn-number">2</button>
+                    <button class="btn btn-number">3</button>
+                    <button class="btn btn-operation">+</button>
+                    <button class="btn btn-operation">0</button>
+                    <button class="btn btn-number">.</button>
+                    <button class="btn btn-equal span-two">=</button>
+                </div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
 </html>
