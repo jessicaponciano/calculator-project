@@ -1,3 +1,8 @@
+const add = (num1, num2) => parseFloat(num1) + parseFloat(num2);
+const subtract = (num1, num2) => parseFloat(num1) - parseFloat(num2);
+const multiply = (num1, num2) => parseFloat(num1) * parseFloat(num2);
+const divide = (num1, num2) => parseFloat(num1) / parseFloat(num2);
+
 class Calculator {
   constructor(firstOperandText, secondOperandText) {
     this.firstOperandText = firstOperandText;
@@ -21,7 +26,10 @@ class Calculator {
     if (number === '.' && this.secondOperand.includes('.')) {
         return;
     }
-    this.secondOperand = this.secondOperand.toString() + number.toString();
+
+    if(this.secondOperand.toString().length < 22){
+      this.secondOperand = this.secondOperand.toString() + number.toString();
+    }
     this.printResult();
   }
 
@@ -41,20 +49,25 @@ class Calculator {
     if (isNaN(this.firstOperand) || isNaN(this.secondOperand)) return;
     switch (this.operator) {
       case '+':
-        result = parseFloat(this.firstOperand) + parseFloat(this.secondOperand);
+        result = add(this.firstOperand, this.secondOperand);
         break;
       case '-':
-        result = parseFloat(this.firstOperand) - parseFloat(this.secondOperand);
+        result = subtract(this.firstOperand, this.secondOperand);
         break;
       case '*':
-        result = parseFloat(this.firstOperand) * parseFloat(this.secondOperand);
+        result = multiply(this.firstOperand, this.secondOperand);
         break;
       case '/':
-        result = parseFloat(this.firstOperand) / parseFloat(this.secondOperand);
+        result = divide(this.firstOperand, this.secondOperand);
         break;
       default:
         return;
     }
+
+    if(result.toString().split(".").length > 1){
+      result.toString().split(".")[1].length > 5 ? result = result.toFixed(5) : null;
+    }
+  
     this.secondOperand = result;
     this.operator = undefined;
     this.firstOperand = '';
