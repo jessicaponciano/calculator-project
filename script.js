@@ -3,6 +3,13 @@ const subtract = (num1, num2) => parseFloat(num1) - parseFloat(num2);
 const multiply = (num1, num2) => parseFloat(num1) * parseFloat(num2);
 const divide = (num1, num2) => parseFloat(num1) / parseFloat(num2);
 
+function disableButtons() {
+  for (let btn of (document.getElementsByTagName(".btn"))) {
+      btn.disabled = true;
+  }
+}
+
+
 class Calculator {
   constructor(firstOperandText, secondOperandText) {
     this.firstOperandText = firstOperandText;
@@ -58,13 +65,20 @@ class Calculator {
         result = multiply(this.firstOperand, this.secondOperand);
         break;
       case '/':
+        if (this.secondOperand == 0) {
+          alert('Arithmetic Error: Cannot divide by 0');
+          disableButtons();
+          clearButton.disabled = false;
+          result = '';
+          break;
+        }
         result = divide(this.firstOperand, this.secondOperand);
         break;
       default:
         return;
     }
 
-    if(result.toString().split(".").length > 1){
+    if(result % 1 !== 0 && Number(result)){
       result.toString().split(".")[1].length > 5 ? result = result.toFixed(5) : null;
     }
   
