@@ -61,7 +61,7 @@ class Calculator {
       case '-':
         result = subtract(this.firstOperand, this.secondOperand);
         break;
-      case '*':
+      case 'x':
         result = multiply(this.firstOperand, this.secondOperand);
         break;
       case '/':
