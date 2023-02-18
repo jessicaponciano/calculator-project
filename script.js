@@ -34,7 +34,7 @@ class Calculator {
         return;
     }
 
-    if(this.secondOperand.toString().length < 22){
+    if(this.secondOperand.toString().length < 13){
       this.secondOperand = this.secondOperand.toString() + number.toString();
     }
     this.printResult();
